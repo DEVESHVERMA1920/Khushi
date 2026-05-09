@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Happy Mother's Day ❤️</title>
+<title>Maa ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -15,156 +18,212 @@ box-sizing:border-box;
 }
 
 body{
-font-family: Arial, sans-serif;
-background: linear-gradient(to bottom, #ffe6eb, #fff);
-overflow-x:hidden;
-color:#333;
+font-family:'Poppins',sans-serif;
+background:linear-gradient(to bottom,#ffe6ee,#fff5f7);
+overflow:hidden;
+height:100vh;
 }
 
-.section{
-min-height:100vh;
+.slide{
+position:absolute;
+width:100%;
+height:100vh;
+
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-padding:30px;
+
+padding:25px;
 text-align:center;
 
 opacity:0;
-transform:translateY(40px);
-animation:fadeUp 1.5s forwards;
+transform:scale(0.95);
+transition:1s;
+
+pointer-events:none;
 }
 
-.section:nth-child(1){
-animation-delay:0.5s;
-}
-
-.section:nth-child(2){
-animation-delay:2s;
-}
-
-.section:nth-child(3){
-animation-delay:4s;
-}
-
-.section:nth-child(4){
-animation-delay:6s;
-}
-
-@keyframes fadeUp{
-to{
+.active{
 opacity:1;
-transform:translateY(0);
-}
+transform:scale(1);
+pointer-events:auto;
 }
 
 h1{
-font-size:60px;
+font-size:55px;
 color:#ff4d6d;
 margin-bottom:20px;
+font-weight:700;
 }
 
 h2{
-font-size:40px;
-margin-bottom:20px;
+font-size:42px;
 color:#ff4d6d;
+margin-bottom:20px;
 }
 
 p{
-font-size:24px;
+font-size:28px;
 line-height:1.8;
-max-width:850px;
+max-width:900px;
 margin-top:25px;
+font-weight:500;
+color:#444;
 }
 
 img{
 width:90%;
-max-width:500px;
+max-width:430px;
+max-height:60vh;
+
+object-fit:cover;
+
 border-radius:25px;
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
+
+box-shadow:0 12px 35px rgba(0,0,0,0.2);
+
 margin-top:20px;
 }
 
 .heart{
-font-size:70px;
+font-size:75px;
 animation:beat 1s infinite;
 }
 
 @keyframes beat{
 50%{
-transform:scale(1.1);
+transform:scale(1.15);
 }
 }
 
+.tapText{
+position:absolute;
+bottom:25px;
+font-size:18px;
+color:#777;
+}
+
 </style>
+
 </head>
 
 <body>
 
-<div class="section">
+<div class="slide active">
 
 <div class="heart">❤️</div>
 
 <h1>Happy Mother's Day</h1>
 
 <p>
-For the strongest, kindest and most beautiful woman ✨
+For The Strongest, Kindest And Most Beautiful Woman ✨
 </p>
+
+<div class="tapText">
+Tap Right ➜ Next <br>
+Tap Left ⬅ Previous
+</div>
 
 </div>
 
-<div class="section">
+<div class="slide">
 
 <h2>Fav Photo 📸</h2>
 
 <img src="photo1.jpg">
 
 <p>
-because on this day i saw a kid inside you trying new things
-and i wish many more dates like this with you ❤️
+Because On This Day I Saw A Kid Inside You Trying New Things,
+And I Wish Many More Dates Like This With You ❤️
 </p>
 
 </div>
 
-<div class="section">
+<div class="slide">
 
 <h2>Fav Memory ✨</h2>
 
 <img src="photo2.jpg">
 
 <p>
-my scholarship day, khud ko big deal ni lgri thi jb tk
-i saw the video recording jo mam ne ki thi,
-and then i could see it in your eyes that you're so proud of me!
+My Scholarship Day... Khud Ko Big Deal Nahi Lag Rahi Thi
+Jab Tak I Saw The Video Recording Jo Mam Ne Ki Thi.
+And Then I Could See It In Your Eyes That You're So Proud Of Me! ❤️
 </p>
 
 </div>
 
-<div class="section">
+<div class="slide">
 
 <img src="photo3.jpg">
 
 <p>
-Baki we love you maa! ❤️
+
+Baki We Love You Maa ❤️
 <br><br>
 
-I wish mai apke jitni confident,
-apke jitni kind,
-apke jitni big hearted bn pai
-and apke jitna life m achieve kr pau.
-I always look up to youu.
+I Wish Mai Apke Jitni Confident,
+Apke Jitni Kind,
+Apke Jitni Big Hearted Ban Pau,
+And Apke Jitna Life Me Achieve Kar Pau.
+I Always Look Up To Youu ✨
+
 <br><br>
 
-Thank you for everything 🫶
+Thank You For Everything 🫶
+
 <br><br>
 
-And i really wish ab aap apne upar zayda dhyan do.
+And I Really Wish Ab Aap Apne Upar Zyada Dhyan Do.
+
 <br><br>
 
-Happy mother's day 😘
+Happy Mother's Day 😘
+
 </p>
 
 </div>
+
+<script>
+
+let slides=document.querySelectorAll(".slide");
+
+let current=0;
+
+function showSlide(index){
+
+slides.forEach(slide=>{
+slide.classList.remove("active");
+});
+
+slides[index].classList.add("active");
+
+}
+
+document.addEventListener("click",(e)=>{
+
+if(e.clientX > window.innerWidth/2){
+
+if(current < slides.length-1){
+current++;
+}
+
+}
+
+else{
+
+if(current > 0){
+current--;
+}
+
+}
+
+showSlide(current);
+
+});
+
+</script>
 
 </body>
 </html>
