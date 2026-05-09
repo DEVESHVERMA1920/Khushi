@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -7,7 +8,7 @@
 
 <title>Maa ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -18,14 +19,21 @@ box-sizing:border-box;
 }
 
 body{
+
 font-family:'Poppins',sans-serif;
-background:linear-gradient(to bottom,#ffe6ee,#fff5f7);
-overflow:hidden;
+
+background:linear-gradient(180deg,#fff0f3,#ffe3ea);
+
 height:100vh;
+overflow:hidden;
+
+color:#333;
 }
 
 .slide{
+
 position:absolute;
+
 width:100%;
 height:100vh;
 
@@ -35,93 +43,142 @@ justify-content:center;
 align-items:center;
 
 padding:25px;
+
 text-align:center;
 
 opacity:0;
-transform:scale(0.96);
-transition:1s;
+transform:translateX(50px);
+
+transition:1s ease;
 
 pointer-events:none;
+
 }
 
 .active{
+
 opacity:1;
-transform:scale(1);
+transform:translateX(0);
+
 pointer-events:auto;
+
 }
 
 h1{
-font-size:50px;
+
+font-size:48px;
 color:#ff4d6d;
+
 margin-bottom:20px;
+
 font-weight:700;
+
 }
 
 h2{
-font-size:38px;
+
+font-size:34px;
 color:#ff4d6d;
-margin-bottom:20px;
+
+margin-bottom:18px;
+
+font-weight:600;
+
 }
 
 p{
-font-size:24px;
-line-height:1.8;
-max-width:900px;
+
+font-size:22px;
+
+line-height:1.9;
+
+max-width:850px;
+
 margin-top:25px;
-font-weight:500;
-color:#444;
+
+font-weight:400;
+
 padding-left:10px;
 padding-right:10px;
+
 }
 
 img{
-width:90%;
+
+width:88%;
 max-width:420px;
-max-height:60vh;
+
+max-height:58vh;
 
 object-fit:cover;
 
-border-radius:25px;
+border-radius:28px;
 
-box-shadow:0 12px 35px rgba(0,0,0,0.18);
+box-shadow:0 15px 40px rgba(0,0,0,0.18);
 
 margin-top:20px;
+
 }
 
 .heart{
+
 font-size:75px;
-animation:beat 1s infinite;
+
+animation:heartbeat 1s infinite;
+
 }
 
-@keyframes beat{
+@keyframes heartbeat{
+
 50%{
 transform:scale(1.15);
 }
+
 }
 
-.tapText{
+.instructions{
+
 position:absolute;
+
 bottom:25px;
-font-size:17px;
+
+font-size:15px;
+
 color:#777;
+
+line-height:1.6;
+
 }
 
-.musicButton{
+.musicBtn{
 
 position:absolute;
+
 top:20px;
 right:20px;
 
-background:white;
+width:55px;
+height:55px;
+
 border:none;
 
-padding:12px 16px;
+border-radius:50%;
 
-border-radius:50px;
+background:white;
 
-font-size:20px;
+font-size:22px;
 
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
+box-shadow:0 6px 20px rgba(0,0,0,0.12);
+
+z-index:100;
+
+}
+
+.finalText{
+
+font-size:21px;
+
+line-height:2;
 
 }
 
@@ -131,13 +188,15 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
 
 <body>
 
-<button class="musicButton" onclick="toggleMusic()">
+<button class="musicBtn" onclick="toggleMusic(event)">
 🎵
 </button>
 
-<audio id="bgMusic" loop>
+<audio id="music" loop preload="auto">
 <source src="music.mp3" type="audio/mpeg">
 </audio>
+
+<!-- Slide 1 -->
 
 <div class="slide active">
 
@@ -149,12 +208,17 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
 For The Strongest, Kindest And Most Beautiful Woman ✨
 </p>
 
-<div class="tapText">
+<div class="instructions">
+
 Tap Right ➜ Next <br>
+
 Tap Left ⬅ Previous
+
 </div>
 
 </div>
+
+<!-- Slide 2 -->
 
 <div class="slide">
 
@@ -163,11 +227,15 @@ Tap Left ⬅ Previous
 <img src="photo1.jpg">
 
 <p>
+
 Because On This Day I Saw A Kid Inside You Trying New Things,
 And I Wish Many More Dates Like This With You ❤️
+
 </p>
 
 </div>
+
+<!-- Slide 3 -->
 
 <div class="slide">
 
@@ -176,18 +244,24 @@ And I Wish Many More Dates Like This With You ❤️
 <img src="photo2.jpg">
 
 <p>
+
 My Scholarship Day... Khud Ko Big Deal Nahi Lag Rahi Thi
 Jab Tak I Saw The Video Recording Jo Mam Ne Ki Thi.
-And Then I Could See It In Your Eyes That You're So Proud Of Me! ❤️
+
+And Then I Could See It In Your Eyes
+That You're So Proud Of Me ❤️
+
 </p>
 
 </div>
+
+<!-- Slide 4 -->
 
 <div class="slide">
 
 <img src="photo3.jpg">
 
-<p>
+<p class="finalText">
 
 Baki We Love You Maa ❤️
 
@@ -197,6 +271,9 @@ I Wish Mai Apke Jitni Confident,
 Apke Jitni Kind,
 Apke Jitni Big Hearted Ban Pau,
 And Apke Jitna Life Me Achieve Kar Pau.
+
+<br><br>
+
 I Always Look Up To Youu ✨
 
 <br><br>
@@ -224,7 +301,9 @@ let current=0;
 function showSlide(index){
 
 slides.forEach(slide=>{
+
 slide.classList.remove("active");
+
 });
 
 slides[index].classList.add("active");
@@ -233,10 +312,14 @@ slides[index].classList.add("active");
 
 document.addEventListener("click",(e)=>{
 
+if(e.target.classList.contains("musicBtn")) return;
+
 if(e.clientX > window.innerWidth/2){
 
 if(current < slides.length-1){
+
 current++;
+
 }
 
 }
@@ -244,7 +327,9 @@ current++;
 else{
 
 if(current > 0){
+
 current--;
+
 }
 
 }
@@ -253,16 +338,32 @@ showSlide(current);
 
 });
 
-let music=document.getElementById("bgMusic");
+let music=document.getElementById("music");
 
-function toggleMusic(){
+let playing=false;
 
-if(music.paused){
+function toggleMusic(event){
+
+event.stopPropagation();
+
+if(!playing){
+
 music.play();
+
+playing=true;
+
+document.querySelector(".musicBtn").innerHTML="🔊";
+
 }
 
 else{
+
 music.pause();
+
+playing=false;
+
+document.querySelector(".musicBtn").innerHTML="🎵";
+
 }
 
 }
@@ -270,4 +371,5 @@ music.pause();
 </script>
 
 </body>
+
 </html>
